@@ -36,10 +36,10 @@ exec --no-startup-id nm-applet
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status amixer -q -D pulse sset Master 5%+ && pkill -RTMIN+1 i3blocks
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status amixer -q -D pulse sset Master 5%- && pkill -RTMIN+1 i3blocks
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status amixer -q -D pulse sset Master toggle && pkill -RTMIN+1 i3blocks
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -185,7 +185,7 @@ bindsym $mod+r mode "resize"
 
 # Color shemes for windows 
 set $bgcolor    #523d6499
-set $in-bgcolor #3636364D
+set $in-bgcolor #00000080
 set $focused-ws #6699ff66
 set $bar-color  #000000BF
 set $bar-border #26262680
@@ -204,13 +204,14 @@ client.urgent           $u-bgcolor      $u-bgcolor      $text           $u-bgcol
 # finds out, if available)
 bar {
         position top
-        status_command i3status -c /home/$USER/.config/i3/i3status/i3status.conf
+        #status_command i3status -c /home/$USER/.config/i3/i3status/i3status.conf
+        status_command i3blocks -c /home/$USER/.config/i3/i3blocks/i3blocks.conf
         i3bar_command i3bar --transparency
         tray_output none
         font pango: Droid Sans Mono 6
         colors {
                 background $bar-color
-                separator #191919
+                separator #B3B3B3
                 #                       border          background      text
                 focused_workspace       $focused-ws     $focused-ws     $text
                 inactive_workspace      $in-bgcolor     $in-bgcolor     $text
@@ -226,5 +227,8 @@ exec_always feh --bg-fill ~/Downloads/wallpapers/WallpaperDog-20485362.jpg
 bindsym $mod+x exec /home/$USER/.config/i3/scripts/lock
 
 # Transparency with picom compositor
-exec_always picom --fade-in-step=1 --fade-out-step=1 &
+exec_always picom --config ~/.config/i3/picom/picom.conf --fade-in-step=1 --fade-out-step=1 &
+#exec_always picom --fade-in-step=1 --fade-out-step=1 &
 
+# start pulseaudio
+exec pulseaudio --start
