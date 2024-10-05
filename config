@@ -220,7 +220,7 @@ bar {
 }
 
 # Display Wallpaper
-exec_always feh --bg-fill ~/Downlaods/wallpapers/WallpaperDog-20485362.jpg
+exec_always feh --bg-fill ~/Downloads/wallpapers/WallpaperDog-20485362.jpg
 
 # Shortcut for lockscreen
 bindsym $mod+x exec /home/$USER/.config/i3/scripts/lock
