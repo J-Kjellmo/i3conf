@@ -187,7 +187,7 @@ bindsym $mod+r mode "resize"
 set $bgcolor    #523d6499
 set $in-bgcolor #3636364D
 set $focused-ws #6699ff66
-set $bar-color  #00000080
+set $bar-color  #000000BF
 set $bar-border #26262680
 
 set $text       #ffffff
