@@ -20,7 +20,7 @@ def create_argparse():
     parser.add_argument(
         '-b',
         '--base_color',
-        default = _default('BASE_COLOR', '#67db86'),
+        default = _default('BASE_COLOR', '#83F3A1'),
         help='base color of the output(default=green)'
     )
     parser.add_argument(
