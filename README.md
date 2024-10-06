@@ -2,6 +2,7 @@ Remove packages:
     i3lock
 
 Packages requirement:
+    terminator
     git
     yay
     feh
@@ -23,7 +24,7 @@ TLDR cmdlets (in order)
         cd yay
             makepkg -si
     yay -S i3lock-color
-    pacman -S feh lxappearance materia-gtk-theme papirus-icon-theme ttf-font-awesome ttf-ubuntu-font-family ttf-droid zsh
+    pacman -S terminator feh lxappearance materia-gtk-theme papirus-icon-theme ttf-font-awesome ttf-ubuntu-font-family ttf-droid zsh
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
     cd ~/config/i3/.zshrc ~
     
