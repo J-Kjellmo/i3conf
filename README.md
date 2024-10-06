@@ -35,3 +35,8 @@ REMEMBER!
         sudo chown $USER:$USER ~/.config/i3/i3status/i3status.conf
     clone .zshrc file to ~/
     open lxappearance and change icons to what is desired
+
+Recommended packages:
+    nerd-fonts
+        Jetbrains
+        IBMplex
