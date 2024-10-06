@@ -7,6 +7,7 @@ Packages requirement:
     yay
     feh
     i3lock-color (AUR)
+    picom
     lxappearance
     materia-gtk-theme (change in lxappearance)
     papirus-icon-theme (change in lxappearance)
@@ -24,9 +25,9 @@ TLDR cmdlets (in order)
         cd yay
             makepkg -si
     yay -S i3lock-color
-    pacman -S terminator feh lxappearance materia-gtk-theme papirus-icon-theme ttf-font-awesome ttf-ubuntu-font-family ttf-droid zsh
+    pacman -S terminator feh lxappearance picom materia-gtk-theme papirus-icon-theme ttf-font-awesome ttf-ubuntu-font-family ttf-droid zsh
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-    cd ~/config/i3/.zshrc ~
+    cp ~/config/i3/.zshrc ~
     
 REMEMBER!
     run this command for each file/script in the "scripts" directory:
