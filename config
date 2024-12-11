@@ -9,7 +9,7 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
-set $mod Mod4
+set $mod Mod1
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -208,7 +208,7 @@ bar {
         status_command i3blocks -c /home/$USER/.config/i3/i3blocks/i3blocks.conf
         i3bar_command i3bar --transparency
         tray_output none
-        font pango: Droid Sans Mono 6
+        font pango: Droid Sans Mono 10
         colors {
                 background $bar-color
                 separator #B3B3B3
@@ -221,7 +221,7 @@ bar {
 }
 
 # Display Wallpaper
-exec_always feh --bg-fill ~/Downloads/wallpapers/WallpaperDog-20485362.jpg
+exec_always feh --bg-fill ~/Downloads/wallpapers/H3-Cover-Art.jpg
 
 # Shortcut for lockscreen
 bindsym $mod+x exec /home/$USER/.config/i3/scripts/lock
