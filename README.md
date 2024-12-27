@@ -19,6 +19,11 @@
 * ripgrep
 * flameshot
 * oh-my-zsh
+* yad
+* xdotool
+* rofi
+* curl
+* noto-fonts-emoji
 
 ## TLDR cmdlets (in order)
 ```
@@ -44,7 +49,7 @@ sudo chmod +x makeExecutable.sh
    2. IBMplex
     
 ## REMEMBER!
-* Go to bottom of ./config and set xrandr settings to match device
+* Go to bottom of ~./config/i3/config and set xrandr settings to match device
    * Set --primary for primary monitor, and --auto for others
 * run this command to change the ownership of the i3status.conf file:
    * sudo chown $USER:$USER ~/.config/i3/i3status/i3status.conf
