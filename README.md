@@ -56,3 +56,7 @@ sudo chmod +x makeExecutable.sh
 * open lxappearance and change icons to what is desired
 * Change theme in .zshrc, "frisk" is favorable
 * Run rofi-theme-selector and choose a dark theme preferrably
+
+## TODO
+* Create script for automating the install process, also to personalize and choose which blocks to incude.
+* Actually learn how to make blocks yourself, stupid
