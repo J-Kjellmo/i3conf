@@ -58,5 +58,5 @@ sudo chmod +x makeExecutable.sh
 * Run rofi-theme-selector and choose a dark theme preferrably
 
 ## TODO
-* Create script for automating the install process, also to personalize and choose which blocks to incude.
+* Create script for automating the install process, also to personalize and choose which blocks to include.
 * Actually learn how to make blocks yourself, stupid
