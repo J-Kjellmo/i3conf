@@ -18,12 +18,12 @@
 * zsh
 * ripgrep
 * flameshot
-* oh-my-zsh
 * yad
 * xdotool
 * rofi
 * curl
 * noto-fonts-emoji
+* sysstat
 
 ## TLDR cmdlets (in order)
 ```
@@ -35,7 +35,7 @@ cd yay
 makepkg -si
 cd
 yay -S i3lock-color
-pacman -S terminator feh lxappearance picom materia-gtk-theme papirus-icon-theme ttf-font-awesome ttf-ubuntu-font-family ttf-droid zsh ripgrep flameshot yad xdotool rofi curl noto-fonts-emoji
+pacman -S terminator feh lxappearance picom materia-gtk-theme papirus-icon-theme ttf-font-awesome ttf-ubuntu-font-family ttf-droid zsh ripgrep flameshot yad xdotool rofi curl noto-fonts-emoji sysstat
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 cd ~/.config/i3
 sudo chmod +x makeExecutable.sh
