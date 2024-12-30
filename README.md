@@ -24,6 +24,7 @@
 * curl
 * noto-fonts-emoji
 * sysstat
+* nvidia-settings
 
 ## TLDR cmdlets (in order)
 ```
@@ -34,7 +35,7 @@ git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si
 cd
-yay -S i3lock-color
+yay -S i3lock-color nvidia-settings
 pacman -S terminator feh lxappearance picom materia-gtk-theme papirus-icon-theme ttf-font-awesome ttf-ubuntu-font-family ttf-droid zsh ripgrep flameshot yad xdotool rofi curl noto-fonts-emoji sysstat
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 cd ~/.config/i3
