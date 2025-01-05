@@ -201,7 +201,7 @@ set $indicator  #a8a3c1
 set $w-border   #26262680
 set $focused-w  #3b7cff66
 set $ufocused-w #000000BF
-set $in-w       #00000080
+set $in-w       #000000BF
 set $u-w        #ff7777
 
 set $text       #ffffff
