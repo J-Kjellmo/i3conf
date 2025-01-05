@@ -13,7 +13,7 @@ set $mod Mod1
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:Ubuntu Regular 8
+font pango: Droid Sans Mono 6
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -196,20 +196,31 @@ bindsym $mod+r mode "resize"
 
 # Color shemes for windows 
 set $bgcolor    #523d6499
-set $in-bgcolor #00000080
-set $focused-ws #6699ff66
-set $bar-color  #000000BF
-set $bar-border #26262680
+set $indicator  #a8a3c1
+
+set $w-border   #26262680
+set $focused-w  #3b7cff66
+set $ufocused-w #000000BF
+set $in-w       #00000080
+set $u-w        #ff7777
 
 set $text       #ffffff
-set $u-bgcolor  #ff0000
-set $indicator  #a8a3c1
 set $in-text    #969696
+
 #                       border          background      text            indicator (a line which shows where the next window will be placed)     
-client.focused          $bar-border     $bar-color      $text           $indicator
-client.unfocused        $in-bgcolor     $in-bgcolor     $in-text        $in-bgcolor
-client.focused_inactive $in-bgcolor     $in-bgcolor     $in-text        $in-bgcolor
-client.urgent           $u-bgcolor      $u-bgcolor      $text           $u-bgcolor 
+client.focused          $focused-w      $focused-w      $text           $indicator
+client.unfocused        $ufocused-w     $ufocused-w     $in-text        $indicator
+client.focused_inactive $in-w           $in-w           $in-text        $indicator
+client.urgent           $u-w            $u-w            $text           $indicator 
+
+
+
+# Color schemes for bar
+set $bar-color  #000000BF
+set $bar-border #26262680
+set $in-bgcolor #00000080
+set $u-bgcolor  #ff7777
+set $focused-ws #3b7cff66
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
@@ -272,3 +283,63 @@ exec_always xrandr --output DP-4 --primary --mode 1920x1080 --rate 144
 
 # flameshot shortcut
 bindsym $mod+Shift+s exec flameshot gui
+
+### i3gaps
+
+#############################
+### settings for i3-gaps: ###
+#############################
+
+# Set inner/outer gaps
+#for_window [class="^.*"] border pixel 0
+gaps inner 8
+gaps outer 1
+
+# Additionally, you can issue commands with the following syntax. This is useful to bind keys to changing the gap size.
+# gaps inner|outer current|all set|plus|minus <px>
+# gaps inner all set 10
+# gaps outer all plus 5
+
+# Smart gaps (gaps used if only more than one container on the workspace)
+#smart_gaps on
+
+# Smart borders (draw borders around container only if it is not the only container on this workspace) 
+# on|no_gaps (on=always activate and no_gaps=only activate if the gap size to the edge of the screen is 0)
+smart_borders on
+
+# Press $mod+Shift+g to enter the gap mode. Choose o or i for modifying outer/inner gaps. Press one of + / - (in-/decrement for current workspace) or 0 (remove gaps for current workspace). If you also press Shift with these keys, the change will be global for all workspaces.
+set $mode_gaps Gaps: (o) outer, (i) inner
+set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
+set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
+bindsym $mod+Shift+g mode "$mode_gaps"
+
+mode "$mode_gaps" {
+        bindsym o      mode "$mode_gaps_outer"
+        bindsym i      mode "$mode_gaps_inner"
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+mode "$mode_gaps_inner" {
+        bindsym plus  gaps inner current plus 5
+        bindsym minus gaps inner current minus 5
+        bindsym 0     gaps inner current set 0
+
+        bindsym Shift+plus  gaps inner all plus 5
+        bindsym Shift+minus gaps inner all minus 5
+        bindsym Shift+0     gaps inner all set 0
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+mode "$mode_gaps_outer" {
+        bindsym plus  gaps outer current plus 5
+        bindsym minus gaps outer current minus 5
+        bindsym 0     gaps outer current set 0
+
+        bindsym Shift+plus  gaps outer all plus 5
+        bindsym Shift+minus gaps outer all minus 5
+        bindsym Shift+0     gaps outer all set 0
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
