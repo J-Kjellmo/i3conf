@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# setup environment
+mkdir ~/Downloads/wallpapers
+cp ~/.config/i3/assets/H3_Cover_Art.jpg ~/Downloads/wallpapers
 
 # Save multi-line text with preserved indentation
 arch_update_script=$(cat <<-EOF
@@ -205,65 +208,66 @@ echo -e "\n" >> ./i3blocks/i3blocksTest.conf
 # Process the input
 for choice in $choices; do
     case $choice in
-        14)
-            echo "Terminating install"
-            exit 0
-            ;;
-        13)
-            echo -e "$spotify_script\n" >> ./i3blocks/i3blocksTest.conf
-            echo "spotify chosen!"
-            ;;
-        12)
-            echo -e "$volume_script\n" >> ./i3blocks/i3blocksTest.conf
-            echo "volume chosen!"
-            ;;
-        11)
-            echo -e "$screenshot_script\n" >> ./i3blocks/i3blocksTest.conf
-            echo "screenshot chosen!"
-            ;;
-        10)
-            echo -e "$bandwidth_script\n" >> ./i3blocks/i3blocksTest.conf
-            echo "bandwidth chosen!"
-            ;;
-        9)
-            echo -e "$ip_script\n" >> ./i3blocks/i3blocksTest.conf
-            echo "IP chosen!"
-            ;;
-        8)
-            echo -e "$cpu_script\n" >> ./i3blocks/i3blocksTest.conf
-            echo "cpu chosen!"
-            ;;
-        7)
-            echo -e "$gpu_script\n" >> ./i3blocks/i3blocksTest.conf
-            echo "gpu chosen!"
-            ;;
-        6)
-            echo -e "$memory_script\n" >> ./i3blocks/i3blocksTest.conf
-            echo "memory chosen!"
-            ;;
-        5)
-            echo -e "$disk_script\n" >> ./i3blocks/i3blocksTest.conf
-            echo "disk chosen!"
-            ;;
-        4)
-            echo -e "$battery_script\n" >> ./i3blocks/i3blocksTest.conf
-            echo "battery chosen!"
-            ;;
-        3)
-            echo -e "$rofi_wttr_script\n" >> ./i3blocks/i3blocksTest.conf
-            echo "rofi-wttr chosen!"
+        1)
+            echo -e "$arch_update_script\n" >> ./i3blocks/i3blocksTest.conf
+            echo "arch-update chosen!"
             ;;
         2)
             echo -e "$calendar_script\n" >> ./i3blocks/i3blocksTest.conf
             echo "calendar chosen!"
             ;;
-        1)
-            echo -e "$arch_update_script\n" >> ./i3blocks/i3blocksTest.conf
-            echo "arch-update chosen!"
+        3)
+            echo -e "$rofi_wttr_script\n" >> ./i3blocks/i3blocksTest.conf
+            echo "rofi-wttr chosen!"
             ;;
-          *)
+        4)
+            echo -e "$battery_script\n" >> ./i3blocks/i3blocksTest.conf
+            echo "battery chosen!"
+            ;;
+        5)
+            echo -e "$disk_script\n" >> ./i3blocks/i3blocksTest.conf
+            echo "disk chosen!"
+            ;;
+        6)
+            echo -e "$memory_script\n" >> ./i3blocks/i3blocksTest.conf
+            echo "memory chosen!"
+            ;;
+        7)
+            echo -e "$gpu_script\n" >> ./i3blocks/i3blocksTest.conf
+            echo "gpu chosen!"
+            ;;
+        8)
+            echo -e "$cpu_script\n" >> ./i3blocks/i3blocksTest.conf
+            echo "cpu chosen!"
+            ;;
+        9)
+            echo -e "$ip_script\n" >> ./i3blocks/i3blocksTest.conf
+            echo "IP chosen!"
+            ;;
+        10)
+            echo -e "$bandwidth_script\n" >> ./i3blocks/i3blocksTest.conf
+            echo "bandwidth chosen!"
+            ;;
+        11)
+            echo -e "$screenshot_script\n" >> ./i3blocks/i3blocksTest.conf
+            echo "screenshot chosen!"
+            ;;
+        12)
+            echo -e "$volume_script\n" >> ./i3blocks/i3blocksTest.conf
+            echo "volume chosen!"
+            ;;
+        13)
+            echo -e "$spotify_script\n" >> ./i3blocks/i3blocksTest.conf
+            echo "spotify chosen!"
+            ;;
+        14)
+            echo "Terminating install"
+            exit 0
+            ;;
+        *)
             echo "Invalid choice: $choice>"
             ;;
     esac
 done
+
 

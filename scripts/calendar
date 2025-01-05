@@ -33,7 +33,7 @@ case "$BLOCK_BUTTON" in
 
     # Calculate the position for the upper-right corner
     posX=$((SCREEN_WIDTH - WIDTH + ADJUSTMENT))
-    posY=0
+    posY=5
 
     # Launch the calendar popup
     i3-msg -q "exec GTK_THEME=Adwaita:dark yad --calendar \
